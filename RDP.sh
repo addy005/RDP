@@ -5,7 +5,6 @@ sudo useradd -m Addy
 sudo adduser Addy sudo
 echo 'Addy:9136' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-sudo apt-get update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 sudo dpkg --install chrome-remote-desktop_current_amd64.deb
 sudo apt install --assume-yes --fix-broken
@@ -26,7 +25,7 @@ printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debia
 read -p "Paste Here: " CRP
 su - Addy -c """$CRP"""
 printf 'Check https://remotedesktop.google.com/access/ \n\n'
-if sudo apt-get upgrade &> /dev/null
+if sudo apt-get upate &> /dev/null
 then
     printf "\n\nUpgrade Completed " >&2
 else
